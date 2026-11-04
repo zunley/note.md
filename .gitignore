@@ -1,0 +1,10 @@
+.venv/
+node_modules/
+web/dist/
+web/node_modules/
+notes/
+.env
+**/__pycache__/
+**/*.pyc
+*.tsbuildinfo
+*.log

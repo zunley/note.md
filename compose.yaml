@@ -1,0 +1,16 @@
+services:
+  note-md:
+    build: .
+    image: note-md:latest
+    ports:
+      - "${NOTE_MD_PORT:-8080}:8080"
+    volumes:
+      - /home/sarto/work/source/notebook:/notes
+    environment:
+      NOTE_MD_PASSWORD: ${NOTE_MD_PASSWORD:?请在 .env 中设置登录口令}
+      NOTE_MD_TOKEN_TTL: ${NOTE_MD_TOKEN_TTL:-72h}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-}
+      TZ: Asia/Shanghai
+    restart: unless-stopped
