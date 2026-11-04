@@ -5,7 +5,7 @@ services:
     ports:
       - "${NOTE_MD_PORT:-8080}:8080"
     volumes:
-      - /home/sarto/work/source/notebook:/notes
+      - ./notes/:/notes
     environment:
       NOTE_MD_PASSWORD: ${NOTE_MD_PASSWORD:?请在 .env 中设置登录口令}
       NOTE_MD_TOKEN_TTL: ${NOTE_MD_TOKEN_TTL:-72h}

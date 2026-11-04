@@ -45,10 +45,10 @@ clean:
 
 # --- 发布 ---
 
-# 打 tag 触发 CI 释出镜像到 ghcr.io：make release VERSION=0.1.0
+# 打 tag 触发 CI 释出镜像到 ghcr.io：make release VERSION=1.0.0
 release:
 ifndef VERSION
-	$(error 用法: make release VERSION=0.1.0)
+	$(error 用法: make release VERSION=1.0.0)
 endif
 	git tag v$(VERSION)
 	git push origin main v$(VERSION)

@@ -1,6 +1,6 @@
-# note.md — 容器里的 AI 原生 Markdown 笔记本
+# note.md — AI 原生 Markdown 笔记本
 
-挂载一个目录就是你的笔记本：纯 `.md` 文件、浏览器即时读写，内置 AI 助手帮你查找与整理笔记（FastAPI + FastMCP + assistant-ui + CodeMirror）。
+一个简单的 Web Markdown 笔记本，指定你的笔记目录，随时随地在 Web 上查看和编辑，内置 AI 助手帮你查找与整理。
 
 ## 效果预览
 
@@ -13,11 +13,11 @@
 ![分栏预览](docs/img/split-preview.png)
 
 ## 功能
-- 目录树浏览、新建 / 重命名 / 删除（删除进回收站 `.trash/`），只管理 Markdown 文件
-- 边写边渲染的内联编辑，一键切换分栏预览；自动保存、防冲突覆盖
-- 悬浮 AI 助手（⌘J）：对话式全文搜索、整理目录、批量改写，写操作按会话授权
-- MCP Server 内置：外部 AI 客户端（Cursor / Claude Desktop 等）可直接接入操作笔记本
-- 单口令登录换 token，全部接口受保护
+- 目录树浏览、新建 / 重命名 / 删除
+- 文件编辑保存
+- 悬浮 AI 助手
+- 单口令登录
+- 内置 MCP Server
 
 ## 快速开始（Docker，推荐）
 
@@ -31,8 +31,7 @@ docker run -d --name note-md -p 8080:8080 \
   ghcr.io/zunley/note.md:latest
 ```
 
-浏览器打开 `http://<host>:8080/` 即可使用。`./notes/` 即笔记本根目录，随时可拷走。
-镜像由 CI 多架构（amd64/arm64）释出，仓库内另附 `compose.yaml` 便于携带完整配置。
+浏览器打开 `http://<host>:8080/` 即可使用。`./notes/` 即笔记本根目录
 
 ## 环境变量
 

@@ -48,7 +48,7 @@ make dev       # 后端 uvicorn --reload + 前端 vite dev
 make test      # 后端冒烟测试
 make build     # 无缓存重建镜像
 make deploy    # build + up
-make release VERSION=0.1.0   # 打 v* tag 触发 CI 释出镜像
+make release VERSION=1.0.0   # 打 v* tag 触发 CI 释出镜像
 ```
 
 ## 发布（CI）
