@@ -1,7 +1,7 @@
 services:
   note-md:
     build: .
-    image: note-md:latest
+    image: ghcr.io/zunley/note.md:latest
     ports:
       - "${NOTE_MD_PORT:-8080}:8080"
     volumes:

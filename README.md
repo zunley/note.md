@@ -22,11 +22,17 @@
 ## 快速开始（Docker，推荐）
 
 ```bash
-cp .env.example .env        # 填入 NOTE_MD_PASSWORD 与 LLM 配置
-docker compose up -d
+docker run -d --name note-md -p 8080:8080 \
+  -v $PWD/notes:/notes \
+  -e NOTE_MD_PASSWORD=change-me \
+  -e OPENAI_BASE_URL=https://your-llm-gateway/v1 \
+  -e OPENAI_API_KEY=sk-... \
+  -e OPENAI_MODEL=qwen-plus \
+  ghcr.io/zunley/note.md:latest
 ```
 
 浏览器打开 `http://<host>:8080/` 即可使用。`./notes/` 即笔记本根目录，随时可拷走。
+镜像由 CI 多架构（amd64/arm64）释出，仓库内另附 `compose.yaml` 便于携带完整配置。
 
 ## 环境变量
 

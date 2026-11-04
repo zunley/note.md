@@ -41,6 +41,21 @@ cd src/web && npm install && npm run dev     # http://localhost:5173
 .venv/bin/python src/api/tests/smoke.py
 ```
 
+## 常用命令（Makefile）
+
+```bash
+make dev       # 后端 uvicorn --reload + 前端 vite dev
+make test      # 后端冒烟测试
+make build     # 无缓存重建镜像
+make deploy    # build + up
+make release VERSION=0.1.0   # 打 v* tag 触发 CI 释出镜像
+```
+
+## 发布（CI）
+
+`.github/workflows/release.yml`：推送 `v*` tag（或手动触发）→ 跑冒烟测试 + 前端构建 →
+构建多架构镜像（linux/amd64 + linux/arm64）→ 推送 `ghcr.io/zunley/note.md:{x.y.z, x.y, latest}`。
+
 ## 实现与设计的偏差（对照 docs/PRODUCT.md）
 
 | 项 | 状态 |
