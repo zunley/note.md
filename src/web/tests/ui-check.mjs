@@ -1,6 +1,6 @@
 /**
  * UI 真实浏览器验证（开发用，非 CI）：
- *   node web/tests/ui-check.mjs
+ *   node src/web/tests/ui-check.mjs
  * 前置：server 已在 :8088 运行（NOTE_MD_ROOT=/tmp/note-ui NOTE_MD_PASSWORD=e2epass）。
  * 依赖：复用 files.md 的 playwright（见 require 路径）。
  */

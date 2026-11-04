@@ -245,7 +245,7 @@ MCP 端点（streamable-http）同时供两个消费者：
 ### 7.2 服务端模块 / 函数规划
 
 ```
-server/
+src/api/
 ├── main.py            # FastAPI app + 静态资源/字体托管 + MCP 挂载
 ├── config.py          # env 加载：密码、token TTL、LLM 配置、根目录、auto_write
 ├── auth.py            # issue_token() verify_token() login_limiter()
@@ -269,7 +269,7 @@ server/
 ### 7.3 前端模块规划
 
 ```
-web/
+src/web/
 ├── App.tsx            # 双栏布局 + 悬浮 AI 面板 / 路由状态
 ├── auth/              # LoginGate, useToken()（localStorage + 过期管理）
 ├── tree/              # FileTree, TreeNode, useTree()（缓存 + 变更后失效）

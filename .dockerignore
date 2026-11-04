@@ -1,9 +1,9 @@
 .git
 .venv
 node_modules
-web/dist
-web/node_modules
-server/tests
+src/web/dist
+src/web/node_modules
+src/api/tests
 docs
 notes
 **/__pycache__
